@@ -40,14 +40,15 @@ function App() {
   const handleTouchEnd = () => {
     if (touchStart && touchEnd) {
       const diff = touchEnd - touchStart;
-      if (diff > 50) {
-        // Swipe влево
-        setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-      } else if (diff < -50) {
-        // Swipe вправо
-        setActiveIndex(
-          (prevIndex) => (prevIndex - 1 + images.length) % images.length
-        );
+      const threshold = 100;
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+        } else {
+          setActiveIndex(
+            (prevIndex) => (prevIndex - 1 + images.length) % images.length
+          );
+        }
       }
     }
     setTouchStart(null);
