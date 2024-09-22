@@ -1,7 +1,71 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  // const [activeIndex, setActiveIndex] = useState(0);
+  // const [images] = useState([
+  //   "img/img.svg",
+  //   "img/galery.png",
+  //   "img/img.svg",
+  //   "img/img.svg",
+  // ]);
+
+  // const handleNext = () => {
+  //   setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+  // };
+
+  // const handlePrev = () => {
+  //   setActiveIndex(
+  //     (prevIndex) => (prevIndex - 1 + images.length) % images.length
+  //   );
+  // };
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const images = [
+    "img/img.svg",
+    "img/galery.png",
+    "img/img.svg",
+    "img/galery.png",
+    "img/img.svg",
+  ];
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart && touchEnd) {
+      const diff = touchEnd - touchStart;
+      if (diff > 50) {
+        // Swipe влево
+        setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+      } else if (diff < -50) {
+        // Swipe вправо
+        setActiveIndex(
+          (prevIndex) => (prevIndex - 1 + images.length) % images.length
+        );
+      }
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  useEffect(() => {
+    const sliderImages = document.querySelectorAll(".slider-images img");
+
+    sliderImages.forEach((image, index) => {
+      if (index === activeIndex) {
+        image.classList.add("active");
+      } else {
+        image.classList.remove("active");
+      }
+    });
+  }, [activeIndex]);
+
   return (
     <>
       <header>
@@ -15,11 +79,7 @@ function App() {
               />
             </a>
             <a href="#">
-              <img
-                className="block md:hidden"
-                src="img/logo.svg"
-                alt=""
-              />
+              <img className="block md:hidden" src="img/logo.svg" alt="" />
             </a>
           </div>
           <div className="nav-menu__item nav-menu__item_main">
@@ -43,11 +103,7 @@ function App() {
               Личный кабинет
             </button>
             <button className="nav-menu__btns nav-menu__btns_small nav-menu__btns_first-small">
-              <img
-                className="search-img"
-                src="img/search-img.svg"
-                alt=""
-              />
+              <img className="search-img" src="img/search-img.svg" alt="" />
             </button>
             <button className="nav-menu__btns nav-menu__btns_small nav-menu__btns_second-small">
               Ру
@@ -172,17 +228,42 @@ function App() {
               src="img/galery.png"
               alt="img-cards"
             />
+            {/*
             <img
-              className="inline-block sm:hidden"
+              className="item item-1 inline-block sm:hidden"
               src="img/img.svg"
               alt="img-cards"
             />
-            <div className="slider-btn">
-              <div className="div-btn div-btn_active"></div>
-              <div className="div-btn"></div>
-              <div className="div-btn"></div>
-              <div className="div-btn"></div>
-              <div className="div-btn"></div>
+            <img
+              className="item item-1 inline-block sm:hidden"
+              src="img/img.svg"
+              alt="img-cards"
+            />
+            <img
+              className="item item-1 inline-block sm:hidden"
+              src="img/img.svg"
+              alt="img-cards"
+            /> */}
+            <div className="slider">
+              <div
+                className="slider-images"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                {images.map((image, index) => (
+                  <img key={index} src={image} alt={`Image ${index + 1}`} />
+                ))}
+              </div>
+
+              <div className="slider-dots">
+                {images.map((image, index) => (
+                  <button
+                    key={index}
+                    className={index === activeIndex ? "active" : ""}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -371,7 +452,7 @@ function App() {
                 © 2023 Всероссийский студенческий клуб «Вернадский» (ВСК
                 "Вернадский")
               </p>
-              <a  href="#">
+              <a href="#">
                 <img
                   className="author__img hidden-for-mobile"
                   src="img/rosmolodej.png"
@@ -379,25 +460,13 @@ function App() {
                 />
               </a>
               <a className="inline-block md:hidden" href="#">
-                <img
-                  className="none "
-                  src="img/vk 1 (Traced).svg"
-                  alt="vk"
-                />
+                <img className="none " src="img/vk 1 (Traced).svg" alt="vk" />
               </a>
               <a className="inline-block md:hidden" href="#">
-                <img
-                  className="none "
-                  src="img/rutube.png"
-                  alt="rutube"
-                />
+                <img className="none " src="img/rutube.png" alt="rutube" />
               </a>
               <a className="inline-block md:hidden" href="#">
-                <img
-                  className="none "
-                  src="img/telegram.svg"
-                  alt="telegram"
-                />
+                <img className="none " src="img/telegram.svg" alt="telegram" />
               </a>
             </div>
           </div>
