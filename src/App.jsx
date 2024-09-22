@@ -10,14 +10,14 @@ function App() {
             <a href="#">
               <img
                 className="hidden md:block"
-                src="./img/logo_header.png"
+                src="img/logo_header.png"
                 alt=""
               />
             </a>
             <a href="#">
               <img
                 className="block md:hidden"
-                src="./img/logo.svg"
+                src="img/logo.svg"
                 alt=""
               />
             </a>
@@ -45,7 +45,7 @@ function App() {
             <button className="nav-menu__btns nav-menu__btns_small nav-menu__btns_first-small">
               <img
                 className="search-img"
-                src="./img/search-img.svg"
+                src="img/search-img.svg"
                 alt=""
               />
             </button>
@@ -76,11 +76,11 @@ function App() {
           <p className="nav-site__item">
             <a href="#">Главная </a>
           </p>
-          <img className="mr-[11px]" src="./img/Path.svg" alt="" />
+          <img className="mr-[11px]" src="img/Path.svg" alt="" />
           <p className="nav-site__item">
             <a href="#">…… </a>
           </p>
-          <img className="mr-[11px]" src="./img/Path.svg" alt="" />
+          <img className="mr-[11px]" src="img/Path.svg" alt="" />
           <p className="nav-site__item nav-site__item_big">
             Мероприятие день воинской славы России
           </p>
@@ -169,12 +169,12 @@ function App() {
             </p>
             <img
               className="hidden sm:inline-block"
-              src="./img/galery.png"
+              src="img/galery.png"
               alt="img-cards"
             />
             <img
               className="inline-block sm:hidden"
-              src="./img/img.svg"
+              src="img/img.svg"
               alt="img-cards"
             />
             <div className="slider-btn">
@@ -190,42 +190,42 @@ function App() {
           <a href="#">
             <img
               className="soc-net__item soc-net__item_last"
-              src="./img/VK.svg.png"
+              src="img/VK.svg.png"
               alt=""
             />
           </a>
           <a href="#">
             <img
               className="soc-net__item soc-net__item_last"
-              src="./img/o.png"
+              src="img/o.png"
               alt=""
             />
           </a>
           <a href="">
             <img
               className="soc-net__item soc-net__item_last"
-              src="./img/telegram.svg"
+              src="img/telegram.svg"
               alt=""
             />
           </a>
           <a href="#">
             <img
               className="soc-net__item soc-net__item_last"
-              src="./img/v.png"
+              src="img/v.png"
               alt=""
             />
           </a>
           <a href="#">
             <img
               className="soc-net__item soc-net__item_last"
-              src="./img/whatsapp_logo.webp"
+              src="img/whatsapp_logo.webp"
               alt=""
             />
           </a>
           <a href="#">
             <img
               className="soc-net__item soc-net__item_last"
-              src="./img/Mask.png"
+              src="img/Mask.png"
               alt=""
             />
           </a>
@@ -239,35 +239,35 @@ function App() {
                 <a href="#">
                   <img
                     className="active-for-mobile"
-                    src="./img/mobile-logo.svg"
+                    src="img/mobile-logo.svg"
                     alt="logo"
                   />
                 </a>
                 <a href="#">
                   <img
                     className="hidden-for-mobile logo-university"
-                    src="./img/logo.svg"
+                    src="img/logo.svg"
                     alt=""
                   />
                 </a>
                 <a href="#">
                   <img
                     className="hidden-for-mobile hidden-for-mobile_first"
-                    src="./img/vk 1 (Traced).svg"
+                    src="img/vk 1 (Traced).svg"
                     alt="vk"
                   />
                 </a>
                 <a href="#">
                   <img
                     className="hidden-for-mobile"
-                    src="./img/rutube.png"
+                    src="img/rutube.png"
                     alt="rutube"
                   />
                 </a>
                 <a href="#">
                   <img
                     className="hidden-for-mobile"
-                    src="./img/telegram.svg"
+                    src="img/telegram.svg"
                     alt="telegram"
                   />
                 </a>
@@ -374,28 +374,28 @@ function App() {
               <a  href="#">
                 <img
                   className="author__img hidden-for-mobile"
-                  src="./img/rosmolodej.png"
+                  src="img/rosmolodej.png"
                   alt="росмолодежь"
                 />
               </a>
               <a className="inline-block md:hidden" href="#">
                 <img
                   className="none "
-                  src="./img/vk 1 (Traced).svg"
+                  src="img/vk 1 (Traced).svg"
                   alt="vk"
                 />
               </a>
               <a className="inline-block md:hidden" href="#">
                 <img
                   className="none "
-                  src="./img/rutube.png"
+                  src="img/rutube.png"
                   alt="rutube"
                 />
               </a>
               <a className="inline-block md:hidden" href="#">
                 <img
                   className="none "
-                  src="./img/telegram.svg"
+                  src="img/telegram.svg"
                   alt="telegram"
                 />
               </a>
@@ -405,7 +405,7 @@ function App() {
             <a href="#">
               <img
                 className="author__img"
-                src="./img/rosmolodej.png"
+                src="img/rosmolodej.png"
                 alt="росмолодежь"
               />
             </a>
